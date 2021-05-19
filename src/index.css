@@ -1,13 +1,188 @@
-body {
+*,
+::after,
+::before {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #333;
+  color: #fff;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+/* center position */
+.section {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+}
+
+/* title */
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.underline {
+  width: 18rem;
+  height: 0.25rem;
+  background: #986b8e;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* for jobs-center : button-container, jobs-info*/
+.jobs-center {
+  width: 80vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  row-gap: 2rem;
+}
+
+/* button-container */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.job-btn {
+  margin: 0 0.5rem;
+  background: transparent;
+  border: transparent;
+  color: #fff;
+  font-size: 0.875rem;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s linear;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.job-btn:hover {
+  background: #986b8e;
+  color: #fff;
+}
+
+.active-btn {
+  background: #986b8e;
+  color: #fff;
+}
+
+/* job-info */
+.job-info h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.job-info h4 {
+  display: inline-block;
+  background: #986b8e;
+  color: #fff;
+  padding: 0.1rem 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.job-info .date {
+  letter-spacing: 0.25rem;
+  text-transform: capitalize;
+}
+
+/* grid for desc */
+.job-desc {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  justify-content: start;
+}
+
+.more-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-more {
+  display: inline-block;
+  padding: 0.5rem 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin: 2rem 0;
+  background: #986b8e;
+  color: #fff;
+  border: transparent;
+}
+
+/* active-btn */
+
+/* will 2 column */
+@media (min-width: 992px) {
+  .button-container {
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 2rem;
+  }
+  .jobs-center {
+    grid-template-columns: 250px 1fr;
+    column-gap: 4rem;
+  }
+  .job-desc {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .job-desc p {
+    margin-bottom: 0;
+    max-width: 500px;
+  }
+}
+
+/* animation */
+@keyframes square-in-center {
+  from {
+    clip-path: inset(100% 100% 100% 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style='in:square:center'] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-center both;
+}
+
+/* loading */
+.loading {
+  text-align: center;
+  margin: 5rem auto;
+  min-height: 30vh;
+}
+
+.loading h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.3rem;
 }
